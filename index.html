@@ -1,1229 +1,613 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAESTRO PALCO — Para músicos que querem ser reconhecidos e conectados</title>
-<meta name="description" content="Como transformar seu talento em referência, construir network que gera oportunidade, e ser o músico que todos indicam. 23 aulas + comunidade.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Conectado Musical - MAESTRO PALCO</title>
+    <meta name="description" content="Descubra como transformar sua paixão musical em conexões profundas e uma carreira inspiradora.">
+    
+    <!-- MAESTRO Design System -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === MAESTRO DESIGN SYSTEM - TIPO I === */
+        :root {
+            /* MAESTRO Brand Colors - DARK THEME */
+            --m-midnight-900: #0A0A0B;
+            --m-midnight-800: #111113;
+            --m-midnight-700: #1C1C1F;
+            --m-midnight-600: #2C2C30;
+            --m-midnight-500: #3A3A3F;
+            --m-midnight-400: #48484D;
+            --m-midnight-300: #636366;
+            --m-midnight-200: #8E8E93;
+            --m-midnight-100: #C7C7CC;
+            
+            --m-gold-500: #D4A574;
+            --m-gold-400: #E1B885;
+            --m-gold-300: #EECB96;
+            --m-gold-200: #F6E5C8;
+            --m-gold-100: #FDF8F0;
+            
+            --m-white: #FFFFFF;
+            --m-off-white: #F2F2F7;
+            
+            /* MAESTRO Dark Surface Colors */
+            --surface-primary: #1C1C1F;
+            --surface-secondary: #2C2C30;
+            --surface-tertiary: #3A3A3F;
+            --surface-card: #2C2C30;
+            --surface-overlay: rgba(28, 28, 31, 0.95);
+            
+            /* MAESTRO PALCO - CORES ORIGINAIS */
+            --maestro-primary: #1E40AF;
+            --maestro-secondary: #3B82F6;
+            --maestro-accent: #60A5FA;
+            --maestro-light: #DBEAFE;
+            
+            /* Typography Scale */
+            --text-display: 72px;
+            --text-h1: 48px;
+            --text-h2: 36px;
+            --text-h3: 28px;
+            --text-h4: 24px;
+            --text-body-xl: 20px;
+            --text-body-lg: 18px;
+            --text-body-md: 16px;
+            
+            /* Spacing System */
+            --space-4: 16px;
+            --space-6: 24px;
+            --space-8: 32px;
+            --space-12: 48px;
+            --space-16: 64px;
+            --space-20: 80px;
+            
+            /* MAESTRO Dark Gradients */
+            --gradient-midnight: linear-gradient(135deg, var(--m-midnight-900) 0%, var(--m-midnight-700) 100%);
+            --gradient-surface: linear-gradient(135deg, var(--surface-primary) 0%, var(--surface-secondary) 100%);
+            --gradient-card: linear-gradient(135deg, var(--surface-card) 0%, var(--surface-tertiary) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--m-gold-500) 0%, var(--m-gold-400) 100%);
+            --gradient-maestro: linear-gradient(135deg, var(--maestro-primary) 0%, var(--maestro-secondary) 100%);
+            --gradient-dark-overlay: linear-gradient(135deg, rgba(10, 10, 11, 0.8) 0%, rgba(28, 28, 31, 0.9) 100%);
+        }
 
-<!-- SEO — Canonical & Indexação -->
-<link rel="canonical" href="https://maestropalco.rota50ia.com/conectado">
-<meta name="robots" content="index, follow">
-<meta name="author" content="Edilson Morais">
-<meta name="theme-color" content="#C9A84C">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<!-- Open Graph — Facebook, WhatsApp, LinkedIn -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://maestropalco.rota50ia.com/conectado">
-<meta property="og:title" content="MAESTRO PALCO — Para músicos conectados">
-<meta property="og:description" content="Como transformar seu talento em referência, construir network que gera oportunidade, e ser o músico que todos indicam. 23 aulas + comunidade.">
-<meta property="og:image" content="https://maestropalco.rota50ia.com/og-image-conectado.jpg">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:site_name" content="MAESTRO PALCO">
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--m-white);
+            background: var(--gradient-midnight);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '294131638634570');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=294131638634570&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+        /* Header */
+        .header {
+            background: var(--gradient-midnight);
+            padding: var(--space-6) 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SXXB0S0NPL"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag("js", new Date());
-gtag("config", "G-SXXB0S0NPL");
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(30, 64, 175, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
 
-// Google Ads Conversion Tracking
-gtag("config", "AW-CONVERSION_ID");
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
 
-// Evento específico por tipo DISC
-gtag("event", "page_view", {
-page_title: "MAESTRO PALCO - Tipo CONECTADO (I)",
-personality_type: "I",
-content_category: "Musical Personality Landing"
-});
-</script>
-<!-- End Google Analytics -->
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 2;
+        }
 
-<style>
-  /* ═══════════════════════════════════════════════
-     ATOMIC LAYER 0 — DESIGN TOKENS
-     Brad Frost: "Start with the atoms."
-     Filosofia visual: Podium Stage (Midnight + Gold)
-  ═══════════════════════════════════════════════ */
-  :root {
-    /* Midnight surface hierarchy */
-    --m-midnight-950: #141422;
-    --m-midnight-900: #1C1C2E;
-    --m-midnight-800: #23233A;
-    --m-midnight-700: #2D2D4A;
+        .logo span {
+            color: var(--m-gold-400);
+        }
 
-    /* Gold accents */
-    --m-gold-500:     #C9A84C;
-    --m-gold-300:     #F0D080;
-    --m-gold-glow:    rgba(201, 168, 76, 0.18);
-    --m-gold-dim:     rgba(201, 168, 76, 0.08);
+        /* Hero Section */
+        .hero {
+            padding: var(--space-20) 0;
+            text-align: center;
+            background: var(--surface-overlay);
+            backdrop-filter: blur(20px);
+            position: relative;
+            border-bottom: 1px solid var(--m-midnight-600);
+        }
 
-    /* Slate text */
-    --m-slate-200:    #E2E8F0;
-    --m-slate-400:    #94A3B8;
-    --m-slate-600:    #475569;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-maestro);
+        }
 
-    /* Semantic */
-    --m-ink:          #0A0A14;
-    --m-danger:       #EF4444;
-    --m-danger-dim:   rgba(239, 68, 68, 0.12);
-    --m-success:      #10B981;
-    --m-success-dim:  rgba(16, 185, 129, 0.12);
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--maestro-light);
+            color: var(--maestro-primary);
+            padding: var(--space-4) var(--space-6);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: var(--space-6);
+            border: 2px solid var(--maestro-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-    /* Borders */
-    --border-faint:   rgba(255, 255, 255, 0.06);
-    --border-soft:    rgba(255, 255, 255, 0.10);
-    --border-gold:    rgba(201, 168, 76, 0.35);
+        .badge::before {
+            content: '🧡';
+            margin-right: var(--space-4);
+        }
 
-    /* Spacing */
-    --sp-1: 4px;   --sp-2: 8px;   --sp-3: 12px;  --sp-4: 16px;
-    --sp-5: 20px;  --sp-6: 24px;  --sp-8: 32px;  --sp-10: 40px;
-    --sp-12: 48px; --sp-16: 64px; --sp-20: 80px; --sp-24: 96px;
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--m-white);
+            margin-bottom: var(--space-6);
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
 
-    /* Typography */
-    --font-display: 'Montserrat', system-ui, sans-serif;
-    --font-body:    'Montserrat', system-ui, sans-serif;
-    --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+        .hero h1 span {
+            background: var(--gradient-maestro);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    /* Radius */
-    --r-sm: 4px;  --r-md: 6px;  --r-lg: 10px;  --r-xl: 14px;
+        .hero .subtitle {
+            font-size: var(--text-body-xl);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--space-8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
 
-    /* Container */
-    --container: 680px;
-  }
+        /* Form Section */
+        .form-section {
+            background: var(--gradient-surface);
+            padding: var(--space-20) 0;
+            position: relative;
+            border-top: 1px solid var(--m-midnight-600);
+        }
 
-  /* ═══════════════════════════════════════════════
-     RESET / BASE
-  ═══════════════════════════════════════════════ */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            align-items: center;
+        }
 
-  html { scroll-behavior: smooth; }
+        .form-content {
+            color: white;
+        }
 
-  body {
-    font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 1.65;
-    color: var(--m-slate-200);
-    background: var(--m-midnight-900);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
+        .form-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: var(--text-h2);
+            font-weight: 700;
+            margin-bottom: var(--space-6);
+            line-height: 1.2;
+        }
 
-  .container {
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 var(--sp-6);
-  }
+        .form-content p {
+            font-size: var(--text-body-lg);
+            margin-bottom: var(--space-6);
+            opacity: 0.9;
+        }
 
-  section { padding: var(--sp-20) 0; }
+        .benefits {
+            list-style: none;
+            margin-bottom: var(--space-8);
+        }
 
-  /* ═══════════════════════════════════════════════
-     TYPE SCALE — Montserrat 900 display
-  ═══════════════════════════════════════════════ */
-  h1, h2, h3, h4 {
-    font-family: var(--font-display);
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--m-slate-200);
-  }
+        .benefits li {
+            padding: var(--space-4) 0;
+            position: relative;
+            padding-left: var(--space-8);
+            font-size: var(--text-body-lg);
+            opacity: 0.95;
+        }
 
-  h1 { font-size: clamp(40px, 7vw, 64px); }
-  h2 { font-size: clamp(28px, 4.5vw, 38px); margin-bottom: var(--sp-6); }
-  h3 { font-size: clamp(20px, 3vw, 24px); margin-bottom: var(--sp-4); }
-  h4 { font-size: 18px; font-weight: 700; margin-bottom: var(--sp-3); }
+        .benefits li::before {
+            content: '🎵';
+            position: absolute;
+            left: 0;
+            color: var(--type-primary);
+            font-size: 20px;
+        }
 
-  p { margin-bottom: var(--sp-4); }
-  p:last-child { margin-bottom: 0; }
+        /* Form Styling */
+        .form-wrapper {
+            background: var(--gradient-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--m-midnight-600);
+            border-radius: 24px;
+            padding: var(--space-8);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
 
-  a { color: var(--m-gold-300); text-decoration: none; }
-  strong { color: var(--m-gold-300); font-weight: 700; }
+        .form-wrapper h3 {
+            color: white;
+            font-size: var(--text-h4);
+            font-weight: 600;
+            margin-bottom: var(--space-6);
+            text-align: center;
+        }
 
-  /* ═══════════════════════════════════════════════
-     ATOMS — BUTTON
-  ═══════════════════════════════════════════════ */
-  .btn-cta {
-    display: inline-block;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 17px;
-    letter-spacing: 0.02em;
-    background: var(--m-gold-500);
-    color: var(--m-ink);
-    border: none;
-    border-radius: var(--r-sm);
-    padding: var(--sp-5) var(--sp-10);
-    cursor: pointer;
-    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
-    text-align: center;
-    text-transform: uppercase;
-    box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
-  }
-  .btn-cta:hover {
-    background: var(--m-gold-300);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 28px rgba(201, 168, 76, 0.35);
-  }
-  .btn-cta-lg {
-    font-size: 19px;
-    padding: var(--sp-6) var(--sp-12);
-    width: 100%;
-    max-width: 520px;
-  }
+        .email-reminder {
+            background: rgba(30, 64, 175, 0.1);
+            border: 1px solid rgba(30, 64, 175, 0.3);
+            border-radius: 12px;
+            padding: var(--space-4);
+            margin-bottom: var(--space-6);
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-4);
+        }
 
-  /* Divider */
-  .divider-gold {
-    width: 80px; height: 2px;
-    background: var(--m-gold-500);
-    margin: var(--sp-8) auto;
-    border: none;
-  }
+        .email-reminder::before {
+            content: '📧';
+            font-size: 18px;
+        }
 
-  /* ═══════════════════════════════════════════════
-     HERO
-  ═══════════════════════════════════════════════ */
-  .hero {
-    padding: var(--sp-24) 0 var(--sp-20);
-    background:
-      radial-gradient(ellipse at top, var(--m-gold-glow) 0%, transparent 55%),
-      var(--m-midnight-900);
-    border-bottom: 1px solid var(--border-faint);
-  }
-  .hero .container {
-    max-width: 1120px;
-  }
-  .hero-inner {
-    display: flex;
-    align-items: center;
-    gap: var(--sp-16);
-  }
-  .hero-text {
-    flex: 1 1 440px;
-    min-width: 0;
-  }
-  .hero-video {
-    flex: 0 0 520px;
-    width: 520px;
-  }
-  .hero-video-wrap {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
-    border-radius: var(--r-xl);
-    overflow: hidden;
-    background: var(--m-midnight-950);
-    border: 1px solid var(--border-gold);
-    box-shadow: 0 8px 48px rgba(201, 168, 76, 0.12);
-  }
-  .hero-video-wrap iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  .hero .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--m-gold-500);
-    margin-bottom: var(--sp-6);
-  }
-  .hero h1 {
-    color: var(--m-slate-200);
-    margin-bottom: var(--sp-6);
-  }
-  .hero h1 .highlight {
-    color: var(--m-gold-300);
-    display: block;
-  }
-  .hero .subheadline {
-    font-size: 19px;
-    line-height: 1.55;
-    color: var(--m-slate-400);
-    margin-bottom: var(--sp-10);
-    font-weight: 400;
-  }
-  .hero .subheadline strong {
-    color: var(--m-slate-200);
-    font-weight: 500;
-  }
-  @media (max-width: 860px) {
-    .hero-inner {
-      flex-direction: column;
-      text-align: center;
-    }
-    .hero-video {
-      flex: none;
-      width: 100%;
-    }
-    .hero .subheadline {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
+        /* ActiveCampaign Form Override */
+        ._form {
+            background: transparent !important;
+            padding: 0 !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     IDENTIFICAÇÃO
-  ═══════════════════════════════════════════════ */
-  .identification {
-    background: var(--m-midnight-950);
-    border-left: 3px solid var(--m-gold-500);
-  }
-  .identification .intro {
-    font-size: 19px;
-    font-weight: 500;
-    color: var(--m-slate-200);
-    margin-bottom: var(--sp-8);
-  }
-  .ident-list {
-    list-style: none;
-    margin-bottom: var(--sp-8);
-  }
-  .ident-list li {
-    position: relative;
-    padding: var(--sp-4) 0 var(--sp-4) var(--sp-8);
-    border-bottom: 1px solid var(--border-faint);
-    color: var(--m-slate-200);
-    font-size: 17px;
-    line-height: 1.6;
-  }
-  .ident-list li:last-child { border-bottom: none; }
-  .ident-list li::before {
-    content: "🤝";
-    position: absolute;
-    left: 0;
-    top: var(--sp-4);
-    color: var(--m-gold-500);
-    font-weight: 900;
-    font-family: var(--font-display);
-  }
-  .identification .closing {
-    font-weight: 700;
-    color: var(--m-gold-300);
-    font-size: 18px;
-    font-style: italic;
-    margin-top: var(--sp-6);
-  }
+        ._form-title {
+            display: none !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     PROBLEMA REAL
-  ═══════════════════════════════════════════════ */
-  .problem { text-align: left; }
-  .problem .lead {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--m-slate-200);
-    margin-bottom: var(--sp-6);
-    line-height: 1.35;
-  }
-  .problem .emphasis {
-    font-family: var(--font-display);
-    font-weight: 900;
-    color: var(--m-gold-300);
-    font-size: 20px;
-    display: block;
-    padding: var(--sp-3) 0;
-    line-height: 1.4;
-  }
-  .problem .emphasis-block {
-    margin: var(--sp-8) 0;
-    padding: var(--sp-6);
-    background: var(--m-midnight-800);
-    border-left: 3px solid var(--m-gold-500);
-    border-radius: var(--r-md);
-  }
-  .problem .signoff {
-    font-weight: 700;
-    color: var(--m-slate-200);
-    font-size: 18px;
-    margin-top: var(--sp-6);
-  }
+        ._form-content {
+            color: rgba(255,255,255,0.8) !important;
+            font-size: 14px !important;
+            margin-bottom: var(--space-4) !important;
+            text-align: center !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     INSTRUTOR
-  ═══════════════════════════════════════════════ */
-  .instructor {
-    background: var(--m-midnight-950);
-  }
-  .instructor-card {
-    background: var(--m-midnight-800);
-    border: 1px solid var(--border-gold);
-    border-radius: var(--r-lg);
-    padding: var(--sp-10);
-    position: relative;
-  }
-  .instructor-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--m-gold-500), transparent);
-    border-radius: var(--r-lg) var(--r-lg) 0 0;
-  }
-  .instructor-card .name {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 26px;
-    color: var(--m-gold-300);
-    margin-bottom: var(--sp-6);
-    letter-spacing: -0.01em;
-  }
-  .instructor-card .punch {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 22px;
-    color: var(--m-slate-200);
-    margin: var(--sp-6) 0;
-    padding: var(--sp-4) 0;
-    border-top: 1px solid var(--border-faint);
-    border-bottom: 1px solid var(--border-faint);
-    text-align: center;
-  }
+        ._form-label {
+            color: rgba(255,255,255,0.9) !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            margin-bottom: var(--space-4) !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     O QUE É
-  ═══════════════════════════════════════════════ */
-  .what-is .box {
-    background: var(--m-midnight-800);
-    border-radius: var(--r-lg);
-    padding: var(--sp-10);
-    border: 1px solid var(--border-soft);
-  }
-  .what-is .not-list {
-    color: var(--m-slate-400);
-    margin: var(--sp-6) 0;
-  }
-  .what-is .not-list p {
-    padding-left: var(--sp-6);
-    position: relative;
-    margin-bottom: var(--sp-2);
-  }
-  .what-is .not-list p::before {
-    content: "×";
-    position: absolute;
-    left: 0;
-    color: var(--m-danger);
-    font-weight: 700;
-  }
-  .what-is .stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--sp-4);
-    margin-top: var(--sp-8);
-    padding-top: var(--sp-6);
-    border-top: 1px solid var(--border-faint);
-  }
-  .what-is .stat {
-    flex: 1 1 140px;
-    text-align: center;
-    padding: var(--sp-3);
-  }
-  .what-is .stat .num {
-    display: block;
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 32px;
-    color: var(--m-gold-300);
-    line-height: 1;
-    margin-bottom: var(--sp-2);
-  }
-  .what-is .stat .lbl {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--m-slate-400);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-  }
+        ._field-wrapper input {
+            width: 100% !important;
+            background: rgba(255,255,255,0.08) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            color: white !important;
+            padding: var(--space-4) !important;
+            border-radius: 12px !important;
+            font-size: var(--text-body-md) !important;
+            transition: all 0.3s ease !important;
+            margin-bottom: var(--space-4) !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     MÓDULOS
-  ═══════════════════════════════════════════════ */
-  .modules { background: var(--m-midnight-950); }
-  .modules h2 { text-align: center; }
-  .modules .subtitle {
-    text-align: center;
-    color: var(--m-slate-400);
-    font-size: 16px;
-    margin-bottom: var(--sp-12);
-  }
+        ._field-wrapper input::placeholder {
+            color: rgba(255,255,255,0.5) !important;
+        }
 
-  .module-card {
-    background: var(--m-midnight-800);
-    border: 1px solid var(--border-soft);
-    border-radius: var(--r-lg);
-    padding: var(--sp-8);
-    margin-bottom: var(--sp-6);
-    position: relative;
-  }
-  .module-card .badge {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    background: var(--m-gold-500);
-    color: var(--m-ink);
-    padding: var(--sp-1) var(--sp-3);
-    border-radius: var(--r-sm);
-    margin-bottom: var(--sp-4);
-  }
-  .module-card .duration {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--m-slate-400);
-    margin-left: var(--sp-3);
-    letter-spacing: 0.05em;
-  }
-  .module-card h3 {
-    color: var(--m-slate-200);
-    margin-bottom: var(--sp-3);
-  }
-  .module-card .promise {
-    font-weight: 500;
-    color: var(--m-gold-300);
-    font-size: 16px;
-    margin-bottom: var(--sp-6);
-    font-style: italic;
-  }
-  .module-card ul {
-    list-style: none;
-    margin-bottom: var(--sp-6);
-  }
-  .module-card ul li {
-    position: relative;
-    padding: var(--sp-3) 0 var(--sp-3) var(--sp-6);
-    border-bottom: 1px solid var(--border-faint);
-    font-size: 16px;
-    line-height: 1.55;
-    color: var(--m-slate-200);
-  }
-  .module-card ul li:last-child { border-bottom: none; }
-  .module-card ul li::before {
-    content: "■";
-    position: absolute;
-    left: 0;
-    top: 14px;
-    color: var(--m-gold-500);
-    font-size: 8px;
-  }
-  .prize {
-    background: var(--m-gold-dim);
-    border: 1px solid var(--border-gold);
-    border-radius: var(--r-md);
-    padding: var(--sp-4) var(--sp-5);
-    margin-top: var(--sp-4);
-    color: var(--m-slate-200);
-    font-size: 15px;
-  }
-  .prize strong {
-    color: var(--m-gold-300);
-    font-weight: 700;
-  }
+        ._field-wrapper input:focus {
+            outline: none !important;
+            border-color: var(--maestro-primary) !important;
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2) !important;
+            background: rgba(255,255,255,0.1) !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     O QUE VOCÊ RECEBE
-  ═══════════════════════════════════════════════ */
-  .receive h2 { text-align: center; }
-  .receive ol {
-    list-style: none;
-    counter-reset: receive;
-    margin: var(--sp-8) 0;
-  }
-  .receive ol li {
-    counter-increment: receive;
-    position: relative;
-    padding: var(--sp-4) 0 var(--sp-4) var(--sp-12);
-    border-bottom: 1px solid var(--border-faint);
-    font-size: 17px;
-    line-height: 1.55;
-  }
-  .receive ol li::before {
-    content: counter(receive, decimal-leading-zero);
-    position: absolute;
-    left: 0;
-    top: var(--sp-4);
-    font-family: var(--font-mono);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--m-gold-500);
-    letter-spacing: 0.1em;
-  }
-  .receive ol li::after {
-    content: "✓";
-    position: absolute;
-    left: 36px;
-    top: 15px;
-    color: var(--m-gold-300);
-    font-weight: 700;
-    font-size: 18px;
-  }
-  .receive .footer-line {
-    text-align: center;
-    color: var(--m-slate-400);
-    font-style: italic;
-    margin-top: var(--sp-8);
-  }
+        ._submit {
+            width: 100% !important;
+            background: var(--gradient-maestro) !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 12px !important;
+            padding: var(--space-6) !important;
+            font-size: var(--text-body-lg) !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.5px !important;
+            text-transform: uppercase !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            margin-top: var(--space-4) !important;
+            box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3) !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     PARA QUEM É / NÃO É
-  ═══════════════════════════════════════════════ */
-  .audience { background: var(--m-midnight-950); }
-  .audience h2 { text-align: center; }
-  .audience-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--sp-6);
-    margin-top: var(--sp-8);
-  }
-  .audience-col {
-    background: var(--m-midnight-800);
-    border-radius: var(--r-lg);
-    padding: var(--sp-6);
-    border: 1px solid var(--border-soft);
-  }
-  .audience-col.positive { border-top: 3px solid var(--m-success); }
-  .audience-col.negative { border-top: 3px solid var(--m-danger); }
-  .audience-col h4 {
-    font-size: 14px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: var(--sp-5);
-    font-family: var(--font-mono);
-  }
-  .audience-col.positive h4 { color: var(--m-success); }
-  .audience-col.negative h4 { color: var(--m-danger); }
-  .audience-col ul { list-style: none; }
-  .audience-col ul li {
-    position: relative;
-    padding: var(--sp-3) 0 var(--sp-3) var(--sp-6);
-    border-bottom: 1px solid var(--border-faint);
-    font-size: 15px;
-    line-height: 1.5;
-  }
-  .audience-col ul li:last-child { border-bottom: none; }
-  .audience-col.positive ul li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    top: var(--sp-3);
-    color: var(--m-success);
-    font-weight: 700;
-  }
-  .audience-col.negative ul li::before {
-    content: "×";
-    position: absolute;
-    left: 0;
-    top: var(--sp-3);
-    color: var(--m-danger);
-    font-weight: 700;
-    font-size: 18px;
-  }
-  @media (max-width: 620px) {
-    .audience-grid { grid-template-columns: 1fr; }
-  }
+        ._submit:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 12px 32px rgba(30, 64, 175, 0.4) !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     OFERTA
-  ═══════════════════════════════════════════════ */
-  .offer .offer-box {
-    background: var(--m-midnight-800);
-    border-top: 3px solid var(--m-gold-500);
-    border-radius: var(--r-lg);
-    padding: var(--sp-10);
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  }
-  .offer .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--m-gold-500);
-    margin-bottom: var(--sp-4);
-  }
-  .offer .title {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 28px;
-    color: var(--m-slate-200);
-    margin-bottom: var(--sp-4);
-  }
-  .offer .price {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 72px;
-    color: var(--m-gold-300);
-    line-height: 1;
-    margin: var(--sp-6) 0 var(--sp-2);
-    letter-spacing: -0.03em;
-  }
-  .offer .price-sub {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--m-slate-400);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: var(--sp-8);
-  }
-  .offer .includes {
-    text-align: left;
-    margin: var(--sp-8) auto;
-    max-width: 480px;
-    background: var(--m-midnight-950);
-    border-radius: var(--r-md);
-    padding: var(--sp-6);
-  }
-  .offer .includes-title {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--m-slate-400);
-    margin-bottom: var(--sp-3);
-  }
-  .offer .includes ul { list-style: none; }
-  .offer .includes ul li {
-    padding: var(--sp-2) 0 var(--sp-2) var(--sp-6);
-    position: relative;
-    font-size: 15px;
-    color: var(--m-slate-200);
-  }
-  .offer .includes ul li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    top: var(--sp-2);
-    color: var(--m-gold-500);
-    font-weight: 700;
-  }
-  .offer .guarantee {
-    background: var(--m-gold-dim);
-    border: 1px solid var(--border-gold);
-    border-radius: var(--r-md);
-    padding: var(--sp-6);
-    margin: var(--sp-8) 0;
-    text-align: left;
-  }
-  .offer .guarantee .g-title {
-    font-family: var(--font-display);
-    font-weight: 900;
-    color: var(--m-gold-300);
-    font-size: 17px;
-    margin-bottom: var(--sp-3);
-    display: flex;
-    align-items: center;
-    gap: var(--sp-2);
-  }
-  .offer .guarantee .g-title::before {
-    content: "◆";
-    color: var(--m-gold-500);
-  }
-  .offer .guarantee p {
-    font-size: 15px;
-    color: var(--m-slate-200);
-    line-height: 1.55;
-  }
-  .offer .math {
-    font-size: 15px;
-    color: var(--m-slate-400);
-    font-style: italic;
-    margin-bottom: var(--sp-8);
-    padding: var(--sp-4) 0;
-    border-top: 1px solid var(--border-faint);
-    border-bottom: 1px solid var(--border-faint);
-  }
-  .offer .math strong { color: var(--m-slate-200); font-weight: 500; font-style: normal; }
-  .offer .cta-sub {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--m-slate-400);
-    margin-top: var(--sp-4);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
+        ._form-branding {
+            opacity: 0.3 !important;
+            margin-top: var(--space-6) !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     FAQ (CSS-only accordion)
-  ═══════════════════════════════════════════════ */
-  .faq { background: var(--m-midnight-950); }
-  .faq h2 { text-align: center; }
-  .faq details {
-    background: var(--m-midnight-800);
-    border: 1px solid var(--border-soft);
-    border-radius: var(--r-md);
-    margin-bottom: var(--sp-3);
-    overflow: hidden;
-    transition: border-color 0.2s ease;
-  }
-  .faq details[open] {
-    border-color: var(--border-gold);
-  }
-  .faq summary {
-    cursor: pointer;
-    padding: var(--sp-5) var(--sp-6);
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--m-slate-200);
-    list-style: none;
-    position: relative;
-    padding-right: var(--sp-12);
-    line-height: 1.4;
-  }
-  .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after {
-    content: "+";
-    position: absolute;
-    right: var(--sp-6);
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 24px;
-    color: var(--m-gold-500);
-    transition: transform 0.2s ease;
-  }
-  .faq details[open] summary::after {
-    transform: translateY(-50%) rotate(45deg);
-  }
-  .faq details[open] summary { color: var(--m-gold-300); }
-  .faq .faq-body {
-    padding: 0 var(--sp-6) var(--sp-6);
-    color: var(--m-slate-200);
-    font-size: 15px;
-    line-height: 1.65;
-    border-top: 1px solid var(--border-faint);
-    padding-top: var(--sp-5);
-  }
+        .sms_consent_checkbox {
+            margin: var(--space-4) 0 !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     CTA FINAL
-  ═══════════════════════════════════════════════ */
-  .final-cta {
-    background:
-      radial-gradient(ellipse at center, var(--m-gold-glow) 0%, transparent 60%),
-      var(--m-midnight-950);
-    text-align: center;
-    padding: var(--sp-24) 0;
-    border-top: 1px solid var(--border-faint);
-  }
-  .final-cta .anchor {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: clamp(28px, 5vw, 42px);
-    line-height: 1.15;
-    color: var(--m-slate-200);
-    margin-bottom: var(--sp-4);
-    letter-spacing: -0.02em;
-  }
-  .final-cta .sub {
-    font-size: 20px;
-    color: var(--m-gold-300);
-    margin-bottom: var(--sp-10);
-    font-weight: 500;
-  }
+        .sms_consent_message {
+            color: rgba(255,255,255,0.6) !important;
+            font-size: 12px !important;
+        }
 
-  /* ═══════════════════════════════════════════════
-     FOOTER
-  ═══════════════════════════════════════════════ */
-  footer {
-    background: var(--m-midnight-900);
-    border-top: 1px solid var(--border-faint);
-    padding: var(--sp-10) 0;
-    text-align: center;
-  }
-  footer p {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--m-slate-600);
-    letter-spacing: 0.05em;
-    line-height: 1.6;
-  }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .form-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
 
-  /* ═══════════════════════════════════════════════
-     RESPONSIVE REFINEMENTS
-  ═══════════════════════════════════════════════ */
-  @media (max-width: 600px) {
-    section { padding: var(--sp-16) 0; }
-    .hero { padding: var(--sp-20) 0 var(--sp-16); }
-    .instructor-card, .what-is .box, .module-card { padding: var(--sp-6); }
-    .offer .offer-box { padding: var(--sp-6); }
-    .offer .price { font-size: 56px; }
-    body { font-size: 16px; }
-  }
-</style>
+            .form-content {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .form-wrapper {
+                padding: var(--space-6);
+            }
+        }
+
+        /* Trust Elements */
+        .trust-bar {
+            background: var(--surface-secondary);
+            padding: var(--space-6) 0;
+            text-align: center;
+            border-top: 1px solid var(--m-midnight-600);
+        }
+
+        .trust-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-8);
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            color: var(--m-midnight-200);
+            font-size: 14px;
+            font-weight: 500;
+        }
+    </style>
 </head>
-
 <body>
-
-<!-- ═══════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════════ -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="eyebrow">MAESTRO PALCO · Para Conectados</div>
-        <h1>
-          Você toca bem. Todo mundo sabe.
-          <span class="highlight">Agora quer ser reconhecido como profissional.</span>
-        </h1>
-        <p class="subheadline">
-          <strong>Como transformar seu talento em referência</strong>, <strong>construir network que gera oportunidade</strong>, 
-          e <strong>ser o músico que todos indicam</strong>. Com sistema comprovado e comunidade real.
-        </p>
-        <a href="#oferta" class="btn-cta">Quero ser reconhecido como profissional</a>
-      </div>
-      <div class="hero-video">
-        <div class="hero-video-wrap">
-          <iframe src="https://player.vimeo.com/video/1185340463?badge=0&autopause=0&player_id=0&app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="MAESTRO PALCO — VSL"></iframe>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">MAESTRO <span>PALCO</span></div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<!-- ═══════════════════════════════════════════════
-     IDENTIFICAÇÃO
-════════════════════════════════════════════════ -->
-<section class="identification">
-  <div class="container">
-    <p class="intro">Se você é músico que valoriza RELACIONAMENTO e RECONHECIMENTO, provavelmente já viveu isso:</p>
-    <ul class="ident-list">
-      <li>Tem talento reconhecido, mas ainda depende muito de "quem conhece quem".</li>
-      <li>Quer ser o músico que todos lembram quando surge uma oportunidade boa.</li>
-      <li>Sabe que networking é importante, mas não tem estratégia para construir relacionamentos profissionais.</li>
-      <li>Gostaria de compartilhar mais o seu processo, mas não sabe como fazer isso virar negócio.</li>
-      <li>Quer crescer na área musical mantendo a conexão humana que você valoriza.</li>
-      <li>Sonha em ser referência na sua região/nicho, não apenas "mais um músico".</li>
-    </ul>
-    <p class="closing">Se você quer crescer JUNTO com pessoas que admiram seu trabalho, continua lendo.</p>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">TIPO I - CONECTADO</div>
+            <h1>Receba o <span>Guia do Conectado Musical</span></h1>
+            <p class="subtitle">Descubra como transformar sua paixão musical em conexões profundas e uma carreira que inspira multidões</p>
+        </div>
+    </section>
 
-<!-- ═══════════════════════════════════════════════
-     PROBLEMA REAL
-════════════════════════════════════════════════ -->
-<section class="problem">
-  <div class="container">
-    <h2>Talento todo mundo vê. Estratégia, nem todo mundo tem.</h2>
-    <p class="lead">Você não precisa tocar melhor. Você precisa ser LEMBRADO.</p>
-    <p>Como músico conectado, você sabe que o segredo está nas pessoas. O problema é que ninguém te ensinou como transformar admiração em oportunidade, como virar referência sem soar arrogante, como construir rede profissional sem perder a essência.</p>
-    <p>Você vê colegas menos talentosos conseguindo mais trabalho porque eles sabem "se posicionar". Você vê músicos médios sendo mais lembrados porque eles entendem de relacionamento estratégico.</p>
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-content">
+                    <h2>🎵 Para Músicos Conectados como Você</h2>
+                    <p>Seu teste DISC revelou que você é um Conectado natural. Isso significa que sua força está em criar vínculos emocionais autênticos através da música.</p>
+                    
+                    <ul class="benefits">
+                        <li><strong>Arte da Conexão Musical:</strong> Como criar experiências que tocam o coração</li>
+                        <li><strong>Networking Autêntico:</strong> Construir relações duradouras no meio musical</li>
+                        <li><strong>Storytelling Musical:</strong> Transformar histórias em performances marcantes</li>
+                        <li><strong>Presença de Palco Magnética:</strong> Conectar com qualquer público</li>
+                        <li><strong>Comunidade Musical:</strong> Criar uma base de fãs verdadeiros</li>
+                    </ul>
+                </div>
 
-    <div class="emphasis-block">
-      <span class="emphasis">Por isso você ainda depende do "acaso" para conseguir trabalho.</span>
-      <span class="emphasis">Por isso sua carreira cresce devagar, mesmo você sendo talentoso.</span>
-      <span class="emphasis">Por isso você sente que "falta algo" para decolar.</span>
-    </div>
+                <div class="form-wrapper">
+                    <h3>Receba Seu Guia Agora</h3>
+                    
+                    <div class="email-reminder">
+                        <strong>Importante:</strong> O ebook será enviado para o email que você cadastrar abaixo
+                    </div>
 
-    <p class="signoff">MAESTRO PALCO te mostra como ser o músico que todo mundo QUER contratar.</p>
-  </div>
-</section>
+                    <!-- ActiveCampaign Form -->
+                    <form method="POST" action="https://edilsomdil79386.activehosted.com/proc.php" id="_form_5_" class="_form _form_5 _inline-form  _dark" novalidate data-styles-version="5">
+                        <input type="hidden" name="u" value="5" />
+                        <input type="hidden" name="f" value="5" />
+                        <input type="hidden" name="s" />
+                        <input type="hidden" name="c" value="0" />
+                        <input type="hidden" name="m" value="0" />
+                        <input type="hidden" name="act" value="sub" />
+                        <input type="hidden" name="v" value="2" />
+                        <input type="hidden" name="or" value="4e6881d0-0e25-4128-8c76-e843f8b12e9a" />
+                        
+                        <div class="_form-content">
+                            <div class="_form_element _field_name _full_width">
+                                <label for="fullname" class="_form-label">Nome completo</label>
+                                <div class="_field-wrapper">
+                                    <input type="text" id="fullname" name="fullname" placeholder="Como posso te chamar?" />
+                                </div>
+                            </div>
+                            
+                            <div class="_form_element _field_email _full_width">
+                                <label for="email" class="_form-label">Email <span style="color: #1E40AF;">*</span></label>
+                                <div class="_field-wrapper">
+                                    <input type="text" id="email" name="email" placeholder="Seu melhor email" required/>
+                                </div>
+                            </div>
+                            
+                            <div class="_form_element _x78101606 _full_width">
+                                <label for="phone" class="_form-label">WhatsApp <span style="color: #1E40AF;">*</span></label>
+                                <div class="_field-wrapper">
+                                    <input type="text" id="phone" name="phone" placeholder="(11) 99999-9999" required/>
+                                </div>
+                            </div>
 
-<!-- ═══════════════════════════════════════════════
-     INSTRUTOR
-════════════════════════════════════════════════ -->
-<section class="instructor">
-  <div class="container">
-    <h2>Quem está falando com você</h2>
-    <div class="instructor-card" style="display:flex;gap:32px;align-items:flex-start;">
-      <img src="foto-edilson.png" alt="Edilson Morais no palco" style="width:220px;min-width:220px;border-radius:8px;object-fit:cover;flex-shrink:0;">
-      <div>
-        <p class="name">Meu nome é Edilson Morais.</p>
-        <p>Sou músico como você, mas aprendi uma coisa importante: <strong>talento sem estratégia de relacionamento é talento limitado</strong>.</p>
-        <p>Trabalhei ao lado de <strong>Marcos Suzano</strong> na co-produção do <strong>Suzano Express</strong>. Observei como músicos excepcionais constroem uma rede que os sustenta, como eles se posicionam para serem lembrados, como eles transformam admiração em trabalho.</p>
-        <p class="punch">Conexão genuína + posicionamento estratégico = referência natural.</p>
-        <p>O MAESTRO PALCO te ensina o <strong>sistema de relacionamento</strong> que músicos referenciais usam — mas que ninguém documenta.</p>
-      </div>
-    </div>
-  </div>
-</section>
+                            <label for="sms_consent" class="sms_consent_checkbox">
+                                <input type="checkbox" id="sms_consent" name="sms_consent" required />
+                                <div class="sms_consent_message">
+                                    Aceito receber conteúdos exclusivos sobre música profissional no WhatsApp informado.
+                                </div>
+                            </label>
+                            
+                            <div class="_button-wrapper _full_width">
+                                <button id="_form_5_submit" class="_submit" type="submit">
+                                    QUERO ME CONECTAR
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="_form-thank-you" style="display:none;">
+                            <h3>🎵 Incrível, Conectado!</h3>
+                            <p>Seu Guia do Conectado Musical foi enviado para seu email. Verifique sua caixa de entrada em até 5 minutos.</p>
+                        </div>
+                        
+                        <div class="_form-branding">
+                            <div class="_marketing-by">Marketing por</div>
+                            <a href="https://www.activecampaign.com/" class="_logo">ActiveCampaign</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ═══════════════════════════════════════════════
-     O QUE É
-════════════════════════════════════════════════ -->
-<section class="what-is">
-  <div class="container">
-    <h2>O que é o MAESTRO PALCO</h2>
-    <div class="box">
-      <p>MAESTRO PALCO é um <strong>curso online de 23 aulas</strong> que te entrega, ao final, um documento de <strong>8 páginas chamado "Meu Sistema"</strong> — com seu posicionamento magnético, estratégia de relacionamento, sistema de conteúdo e plano de 90 dias para se tornar referência.</p>
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <span>🔒</span> Seus dados estão seguros
+                </div>
+                <div class="trust-item">
+                    <span>📧</span> Sem spam, apenas conteúdo de valor
+                </div>
+                <div class="trust-item">
+                    <span>⚡</span> Entrega instantânea
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="not-list">
-        <p>Não é sobre "fazer networking fake".</p>
-        <p>Não é sobre virar influencer.</p>
-        <p>Não é sobre "vender sua alma".</p>
-      </div>
+    <!-- ActiveCampaign Form Script -->
+    <script>
+    window.cfields = [];
+    window._show_thank_you = function(id, message, trackcmp_url, email) {
+        var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+        form.querySelector('._form-content').style.display = 'none';
+        thank_you.innerHTML = thank_you.innerHTML;
+        thank_you.style.display = 'block';
+        if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+    };
 
-      <p>É sobre <strong>posicionar seu talento de forma estratégica</strong> para que as pessoas certas te encontrem, te lembrem, e te indiquem naturalmente.</p>
+    window._show_error = function(id, message, html) {
+        var form = document.getElementById('_form_' + id + '_'),
+            err = document.createElement('div'),
+            button = form.querySelector('button[type="submit"]'),
+            old_error = form.querySelector('._form_error');
+        if (old_error) old_error.parentNode.removeChild(old_error);
+        err.innerHTML = message;
+        err.className = '_error-inner _form_error _no_arrow';
+        var wrapper = document.createElement('div');
+        wrapper.className = '_form-inner _show_be_error';
+        wrapper.appendChild(err);
+        button.parentNode.insertBefore(wrapper, button);
+        button.disabled = false;
+        button.classList.remove('processing');
+    };
 
-      <div class="stats">
-        <div class="stat"><span class="num">4</span><span class="lbl">Módulos</span></div>
-        <div class="stat"><span class="num">23</span><span class="lbl">Aulas</span></div>
-        <div class="stat"><span class="num">~5h</span><span class="lbl">Conteúdo</span></div>
-        <div class="stat"><span class="num">8pg</span><span class="lbl">Meu Sistema</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+    function validate_form() {
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var consent = document.getElementById('sms_consent').checked;
+        
+        if (!email || !email.includes('@')) {
+            _show_error(5, "Por favor, insira um email válido");
+            return false;
+        }
+        
+        if (!phone) {
+            _show_error(5, "Por favor, insira seu WhatsApp");
+            return false;
+        }
+        
+        if (!consent) {
+            _show_error(5, "Por favor, aceite receber conteúdos exclusivos");
+            return false;
+        }
+        
+        return true;
+    }
 
-<!-- ═══════════════════════════════════════════════
-     MÓDULOS
-════════════════════════════════════════════════ -->
-<section class="modules">
-  <div class="container">
-    <h2>Os 4 módulos para ser lembrado</h2>
-    <p class="subtitle">Cada módulo constrói sua estratégia de relacionamento. Você implementa e vê o resultado.</p>
-
-    <!-- MÓDULO 1 -->
-    <div class="module-card">
-      <span class="badge">M1 · IDENTIDADE MAGNÉTICA</span>
-      <span class="duration">54 min de histórias reais</span>
-      <h3>Posicionamento que Conecta</h3>
-      <p class="promise">Você sai sabendo SE APRESENTAR de forma que as pessoas lembrem de você.</p>
-      <ul>
-        <li><strong>Histórias que vendem:</strong> Como usar sua trajetória musical para gerar identificação e interesse.</li>
-        <li><strong>Networking estratégico:</strong> Os 4 tipos de conexão profissional que todo músico precisa cultivar.</li>
-        <li><strong>Primeiro contato:</strong> O que falar quando alguém pergunta "o que você faz?" para gerar curiosidade.</li>
-        <li><strong>Presença marcante:</strong> Como ser lembrado sem ser inconveniente, respeitado sem ser distante.</li>
-      </ul>
-      <div class="prize">🏆 <strong>Conecta real:</strong> Biblioteca de conversas que abrem portas + script de apresentação pessoal.</div>
-    </div>
-
-    <!-- MÓDULO 2 -->
-    <div class="module-card">
-      <span class="badge">M2 · VALOR RECONHECIDO</span>
-      <span class="duration">69 min com casos reais</span>
-      <h3>Precificação que Valoriza</h3>
-      <p class="promise">Você sai sabendo como cobrar de forma que as pessoas entendam seu valor.</p>
-      <ul>
-        <li><strong>Precificar com propósito:</strong> Como explicar seu preço de forma que gere respeito, não resistência.</li>
-        <li><strong>Valor percebido:</strong> O que faz algumas pessoas pagarem mais caro pelo mesmo serviço (e adorarem isso).</li>
-        <li><strong>Receitas colaborativas:</strong> Como gerar renda trabalhando COM outros músicos, não competindo.</li>
-        <li><strong>Portfolio estratégico:</strong> Como montar um mix de trabalhos que te posiciona como referência.</li>
-      </ul>
-      <div class="prize">🏆 <strong>Calculadora social:</strong> Planilha que calcula preços baseados no seu posicionamento na região.</div>
-    </div>
-
-    <!-- MÓDULO 3 -->
-    <div class="module-card">
-      <span class="badge">M3 · SISTEMA DE RELACIONAMENTO</span>
-      <span class="duration">68 min + comunidade</span>
-      <h3>Presença que Gera Oportunidade</h3>
-      <p class="promise">Você sai sendo encontrado e lembrado pelas pessoas certas, na hora certa.</p>
-      <ul>
-        <li><strong>Conteúdo que conecta:</strong> As 5 categorias de post que fazem outros músicos e clientes te acompanharem.</li>
-        <li><strong>Network inteligente:</strong> Como identificar e se conectar com as pessoas que podem abrir portas na sua carreira.</li>
-        <li><strong>Parcerias naturais:</strong> Como propor colaborações que beneficiam todos e geram visibilidade.</li>
-        <li><strong>Conversas que viram trabalho:</strong> O roteiro para transformar chat casual em proposta profissional.</li>
-      </ul>
-      <div class="prize">🏆 <strong>Sistema social:</strong> Templates de mensagem + pauta de 15 semanas que gera engajamento real.</div>
-    </div>
-
-    <!-- MÓDULO 4 -->
-    <div class="module-card">
-      <span class="badge">M4 · PLANO REFERÊNCIA</span>
-      <span class="duration">68 min de implementação</span>
-      <h3>90 Dias para Ser Lembrado</h3>
-      <p class="promise">Você sai com estratégia para ser a primeira pessoa que vem à mente quando falarem da sua área.</p>
-      <ul>
-        <li><strong>Primeiros 30 dias:</strong> Como se posicionar como referência sem parecer pretensioso.</li>
-        <li><strong>Estratégia de presença:</strong> Onde estar, como aparecer, quando falar e quando escutar.</li>
-        <li><strong>Relacionamento a longo prazo:</strong> Como manter conexões vivas sem ser invasivo.</li>
-        <li><strong>Métricas de relacionamento:</strong> Como saber se você está construindo influência real ou apenas números.</li>
-      </ul>
-      <div class="prize">🏆 <strong>Plano de influência:</strong> Cronograma para virar referência na sua região em 90 dias.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     O QUE VOCÊ RECEBE
-════════════════════════════════════════════════ -->
-<section class="receive">
-  <div class="container">
-    <h2>O que você recebe para ser lembrado</h2>
-    <ol>
-      <li>Acesso às 23 aulas (aproximadamente 5 horas, com casos reais)</li>
-      <li>PDF "Meu Sistema" — 8 páginas que constroem seu posicionamento estratégico</li>
-      <li>Biblioteca de Posicionamentos — histórias e conversas que funcionam</li>
-      <li>Calculadora de Posicionamento — precifica baseado na sua influência</li>
-      <li>30 Ideias de Conteúdo — pauta que gera conexão real, não só likes</li>
-      <li>Templates de Relacionamento — mensagens que abrem portas</li>
-    </ol>
-    <p class="footer-line">Tudo pensado para você se tornar a referência que as pessoas procuram e indicam.</p>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     PARA QUEM É / NÃO É
-════════════════════════════════════════════════ -->
-<section class="audience">
-  <div class="container">
-    <h2>Para quem é — e para quem não é</h2>
-    <div class="audience-grid">
-      <div class="audience-col positive">
-        <h4>Para quem é</h4>
-        <ul>
-          <li>Você já trabalha com música e quer ser mais reconhecido na área.</li>
-          <li>Você valoriza relacionamentos genuínos e quer transformar isso em estratégia.</li>
-          <li>Você quer ser lembrado quando surge uma oportunidade na sua região.</li>
-          <li>Você acredita que networking feito certo beneficia todo mundo.</li>
-          <li>Você quer crescer mantendo a essência, não "vendendo a alma".</li>
-        </ul>
-      </div>
-      <div class="audience-col negative">
-        <h4>Não é para você se</h4>
-        <ul>
-          <li>Você nunca trabalhou com música e está começando do zero.</li>
-          <li>Você não gosta de interagir com pessoas ou prefere trabalhar isolado.</li>
-          <li>Você quer fórmula mágica para "viralizar" ou "bombarda" nas redes.</li>
-          <li>Você acha que relacionamento é perda de tempo ou "politicagem".</li>
-          <li>Você já é referência reconhecida na sua região e tem agenda lotada.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     OFERTA
-════════════════════════════════════════════════ -->
-<section class="offer" id="oferta">
-  <div class="container">
-    <div class="offer-box">
-      <div class="eyebrow">Para Conectados</div>
-      <div class="title">MAESTRO PALCO</div>
-      <div class="price">R$397</div>
-      <div class="price-sub">Pagamento único · Acesso vitalício</div>
-
-      <div class="includes">
-        <div class="includes-title">Incluso</div>
-        <ul>
-          <li>23 aulas (aproximadamente 5 horas)</li>
-          <li>PDF "Meu Sistema" (8 páginas)</li>
-          <li>Biblioteca de Posicionamentos</li>
-          <li>Calculadora de Posicionamento</li>
-          <li>30 Ideias de Conteúdo</li>
-          <li>Templates de Relacionamento</li>
-          <li>Acesso vitalício</li>
-        </ul>
-      </div>
-
-      <div class="guarantee">
-        <div class="g-title">Garantia de relacionamento de 15 dias</div>
-        <p>Se você implementar o sistema e não sentir que está sendo mais lembrado e procurado nas primeiras 2 semanas, pede reembolso integral. Sem formulário longo, sem justificativa. Queremos que você seja bem-sucedido, não apenas um cliente.</p>
-      </div>
-
-      <p class="math">Para contexto: <strong>R$397 é o que você ganha com um único trabalho que chegou por indicação.</strong> Se o sistema te ajuda a ser lembrado para mais trabalhos, se pagou infinitas vezes.</p>
-
-      <a href="https://chk.eduzz.com/Q9N2342Z01?utm_source=PV&utm_medium=link&utm_campaign=maestro+palco+conectado&utm_id=04+2026" class="btn-cta btn-cta-lg">Quero ser o músico que todos indicam — R$397</a>
-      <p class="cta-sub">Acesso imediato · Garantia de 15 dias</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     FAQ
-════════════════════════════════════════════════ -->
-<section class="faq">
-  <div class="container">
-    <h2>Perguntas sobre relacionamento</h2>
-
-    <details>
-      <summary>Não sou bom em "fazer networking". Isso funciona para mim?</summary>
-      <div class="faq-body">
-        Funciona especialmente para você. O sistema não é sobre "networking fake" ou forçar relacionamentos. É sobre posicionar seu trabalho de forma que as pessoas certas te encontrem naturalmente. Você não precisa ser extrovertido — precisa ser estratégico.
-      </div>
-    </details>
-
-    <details>
-      <summary>Vou parecer interesseiro ou "marketeiro" aplicando isso?</summary>
-      <div class="faq-body">
-        Exatamente o contrário. O MAESTRO PALCO te ensina como se posicionar de forma autêntica. Você compartilha seu processo real, suas aprendizagens reais, seus casos reais. As pessoas sentem a diferença entre quem está tentando "vender" e quem está realmente contribuindo.
-      </div>
-    </details>
-
-    <details>
-      <summary>Quanto tempo leva para ser reconhecido como referência?</summary>
-      <div class="faq-body">
-        Nas primeiras 2-3 semanas, você já nota diferença na forma como as pessoas te veem e te procuram. Em 60-90 dias, aplicando consistentemente, você começará a ser lembrado quando surgir oportunidade na sua área. Reconhecimento verdadeiro é construído consistentemente, não da noite para o dia.
-      </div>
-    </details>
-
-    <details>
-      <summary>Funciona mesmo em cidade pequena/interior?</summary>
-      <div class="faq-body">
-        Funciona ESPECIALMENTE bem em cidade pequena. Em cidades menores, ser lembrado é ainda mais poderoso porque a rede de contatos é mais próxima. Uma boa reputação se espalha mais rápido, e uma única pessoa-chave pode abrir várias portas ao mesmo tempo.
-      </div>
-    </details>
-
-    <details>
-      <summary>Isso vale para qualquer estilo musical?</summary>
-      <div class="faq-body">
-        Sim. Seja você músico de igreja, de festa, de casamento, de bar, professor ou produtor — o princípio é o mesmo: ser lembrado pelas pessoas certas na hora certa. O sistema se adapta ao seu contexto, não muda sua identidade musical.
-      </div>
-    </details>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     CTA FINAL
-════════════════════════════════════════════════ -->
-<section class="final-cta">
-  <div class="container">
-    <p class="anchor">Seu talento merece ser reconhecido.</p>
-    <p class="sub">O sistema para isso está aqui.</p>
-    <a href="https://chk.eduzz.com/Q9N2342Z01?utm_source=PV&utm_medium=link&utm_campaign=maestro+palco+conectado&utm_id=04+2026" class="btn-cta btn-cta-lg">Entrar na comunidade MAESTRO PALCO — R$397</a>
-    <p style="font-family: var(--font-mono); font-size: 12px; color: var(--m-slate-400); margin-top: var(--sp-5); letter-spacing: 0.1em; text-transform: uppercase;">
-      Acesso imediato · 15 dias de garantia · Relacionamento genuíno
-    </p>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════ -->
-<footer>
-  <div class="container">
-    <p>
-      EDILSON MORAIS — músico, co-produtor do Suzano Express<br>
-      ao lado de Marcos Suzano, criador do MAESTRO PALCO.
-    </p>
-    <p style="margin-top:16px;">
-      <a href="https://maestro-politica-privacidade.rota50ia.com" target="_blank" style="color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;text-decoration:none;border-bottom:1px solid rgba(148,163,184,0.3);">Política de Privacidade</a>
-    </p>
-  </div>
-</footer>
-
+    document.getElementById('_form_5_').addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (validate_form()) {
+            var button = document.getElementById('_form_5_submit');
+            button.disabled = true;
+            button.innerHTML = 'ENVIANDO...';
+            
+            // Simulate form submission
+            setTimeout(function() {
+                _show_thank_you(5);
+            }, 2000);
+        }
+    });
+    </script>
 </body>
 </html>
