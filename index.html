@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia do Conectado Musical - MAESTRO PALCO</title>
-    <meta name="description" content="Descubra como transformar sua paixão musical em conexões profundas e uma carreira inspiradora.">
+    <meta name="description" content="Receba o guia completo para dominar seu nicho musical em 90 dias e se tornar a referência #1 da região.">
     
     <!-- MAESTRO Design System -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-        /* === MAESTRO DESIGN SYSTEM - TIPO I === */
+        /* === MAESTRO DESIGN SYSTEM - TIPO D === */
         :root {
             /* MAESTRO Brand Colors - DARK THEME */
-            --m-midnight-900: #0A0A0B;
-            --m-midnight-800: #111113;
-            --m-midnight-700: #1C1C1F;
+            --m-midnight-900: #1C1C2E;
+            --m-midnight-800: #1C1C2E;
+            --m-midnight-700: #1C1C2E;
             --m-midnight-600: #2C2C30;
             --m-midnight-500: #3A3A3F;
             --m-midnight-400: #48484D;
@@ -33,15 +33,15 @@
             --m-off-white: #F2F2F7;
             
             /* MAESTRO Dark Surface Colors */
-            --surface-primary: #1C1C1F;
-            --surface-secondary: #2C2C30;
-            --surface-tertiary: #3A3A3F;
-            --surface-card: #2C2C30;
-            --surface-overlay: rgba(28, 28, 31, 0.95);
+            --surface-primary: #1C1C2E;
+            --surface-secondary: #1C1C2E;
+            --surface-tertiary: #1C1C2E;
+            --surface-card: #1C1C2E;
+            --surface-overlay: rgba(28, 28, 46, 0.95);
             
             /* MAESTRO PALCO - CORES ORIGINAIS */
-            --maestro-primary: #1E40AF;
-            --maestro-secondary: #3B82F6;
+            --maestro-primary: #A07D34;
+            --maestro-secondary: #A07D34;
             --maestro-accent: #60A5FA;
             --maestro-light: #DBEAFE;
             
@@ -168,7 +168,7 @@
         }
 
         .badge::before {
-            content: '🧡';
+            content: '🔴';
             margin-right: var(--space-4);
         }
 
@@ -246,7 +246,7 @@
         }
 
         .benefits li::before {
-            content: '🎵';
+            content: '⚡';
             position: absolute;
             left: 0;
             color: var(--type-primary);
@@ -291,92 +291,30 @@
             font-size: 18px;
         }
 
-        /* ActiveCampaign Form Override */
-        ._form {
-            background: transparent !important;
-            padding: 0 !important;
-            border: none !important;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            max-width: 100% !important;
-            margin: 0 !important;
+        /* Eduzz Button */
+        .eduzz-button {
+            display: block;
+            width: 100%;
+            background: var(--gradient-maestro);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: var(--space-6);
+            font-size: var(--text-body-lg);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: var(--space-4);
+            box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3);
         }
 
-        ._form-title {
-            display: none !important;
-        }
-
-        ._form-content {
-            color: rgba(255,255,255,0.8) !important;
-            font-size: 14px !important;
-            margin-bottom: var(--space-4) !important;
-            text-align: center !important;
-        }
-
-        ._form-label {
-            color: rgba(255,255,255,0.9) !important;
-            font-size: 14px !important;
-            font-weight: 600 !important;
-            margin-bottom: var(--space-4) !important;
-        }
-
-        ._field-wrapper input {
-            width: 100% !important;
-            background: rgba(255,255,255,0.08) !important;
-            border: 1px solid rgba(255,255,255,0.2) !important;
-            color: white !important;
-            padding: var(--space-4) !important;
-            border-radius: 12px !important;
-            font-size: var(--text-body-md) !important;
-            transition: all 0.3s ease !important;
-            margin-bottom: var(--space-4) !important;
-        }
-
-        ._field-wrapper input::placeholder {
-            color: rgba(255,255,255,0.5) !important;
-        }
-
-        ._field-wrapper input:focus {
-            outline: none !important;
-            border-color: var(--maestro-primary) !important;
-            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2) !important;
-            background: rgba(255,255,255,0.1) !important;
-        }
-
-        ._submit {
-            width: 100% !important;
-            background: var(--gradient-maestro) !important;
-            color: white !important;
-            border: none !important;
-            border-radius: 12px !important;
-            padding: var(--space-6) !important;
-            font-size: var(--text-body-lg) !important;
-            font-weight: 700 !important;
-            letter-spacing: 0.5px !important;
-            text-transform: uppercase !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease !important;
-            margin-top: var(--space-4) !important;
-            box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3) !important;
-        }
-
-        ._submit:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 12px 32px rgba(30, 64, 175, 0.4) !important;
-        }
-
-        ._form-branding {
-            opacity: 0.3 !important;
-            margin-top: var(--space-6) !important;
-        }
-
-        .sms_consent_checkbox {
-            margin: var(--space-4) 0 !important;
-        }
-
-        .sms_consent_message {
-            color: rgba(255,255,255,0.6) !important;
-            font-size: 12px !important;
+        .eduzz-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(30, 64, 175, 0.4);
         }
 
         /* Responsive */
@@ -438,7 +376,7 @@
         <div class="container">
             <div class="badge">TIPO I - CONECTADO</div>
             <h1>Receba o <span>Guia do Conectado Musical</span></h1>
-            <p class="subtitle">Descubra como transformar sua paixão musical em conexões profundas e uma carreira que inspira multidões</p>
+            <p class="subtitle">Descubra como transformar sua paixão musical em conexões profundas e uma carreira inspiradora</p>
         </div>
     </section>
 
@@ -466,63 +404,10 @@
                         <strong>Importante:</strong> O ebook será enviado para o email que você cadastrar abaixo
                     </div>
 
-                    <!-- ActiveCampaign Form -->
-                    <form method="POST" action="https://edilsomdil79386.activehosted.com/proc.php" id="_form_5_" class="_form _form_5 _inline-form  _dark" novalidate data-styles-version="5">
-                        <input type="hidden" name="u" value="3" />
-                        <input type="hidden" name="f" value="5" />
-                        <input type="hidden" name="s" />
-                        <input type="hidden" name="c" value="0" />
-                        <input type="hidden" name="m" value="0" />
-                        <input type="hidden" name="act" value="sub" />
-                        <input type="hidden" name="v" value="2" />
-                        <input type="hidden" name="or" value="4e6881d0-0e25-4128-8c76-e843f8b12e9a" />
-                        
-                        <div class="_form-content">
-                            <div class="_form_element _field_name _full_width">
-                                <label for="fullname" class="_form-label">Nome completo</label>
-                                <div class="_field-wrapper">
-                                    <input type="text" id="fullname" name="fullname" placeholder="Como posso te chamar?" />
-                                </div>
-                            </div>
-                            
-                            <div class="_form_element _field_email _full_width">
-                                <label for="email" class="_form-label">Email <span style="color: #1E40AF;">*</span></label>
-                                <div class="_field-wrapper">
-                                    <input type="text" id="email" name="email" placeholder="Seu melhor email" required/>
-                                </div>
-                            </div>
-                            
-                            <div class="_form_element _x78101606 _full_width">
-                                <label for="phone" class="_form-label">WhatsApp <span style="color: #1E40AF;">*</span></label>
-                                <div class="_field-wrapper">
-                                    <input type="text" id="phone" name="phone" placeholder="(11) 99999-9999" required/>
-                                </div>
-                            </div>
-
-                            <label for="sms_consent" class="sms_consent_checkbox">
-                                <input type="checkbox" id="sms_consent" name="sms_consent" required />
-                                <div class="sms_consent_message">
-                                    Aceito receber conteúdos exclusivos sobre música profissional no WhatsApp informado.
-                                </div>
-                            </label>
-                            
-                            <div class="_button-wrapper _full_width">
-                                <button id="_form_5_submit" class="_submit" type="submit">
-                                    QUERO ME CONECTAR
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="_form-thank-you" style="display:none;">
-                            <h3>🎵 Incrível, Conectado!</h3>
-                            <p>Seu Guia do Conectado Musical foi enviado para seu email. Verifique sua caixa de entrada em até 5 minutos.</p>
-                        </div>
-                        
-                        <div class="_form-branding">
-                            <div class="_marketing-by">Marketing por</div>
-                            <a href="https://www.activecampaign.com/" class="_logo">ActiveCampaign</a>
-                        </div>
-                    </form>
+                    <!-- Botão Eduzz -->
+                    <a href="https://chk.eduzz.com/6W4G11AY0Z" class="eduzz-button">
+                        QUERO MEU EBOOK
+                    </a>
                 </div>
             </div>
         </div>
@@ -545,69 +430,5 @@
         </div>
     </section>
 
-    <!-- ActiveCampaign Form Script -->
-    <script>
-    window.cfields = [];
-    window._show_thank_you = function(id, message, trackcmp_url, email) {
-        var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
-        form.querySelector('._form-content').style.display = 'none';
-        thank_you.innerHTML = thank_you.innerHTML;
-        thank_you.style.display = 'block';
-        if (typeof window._form_callback !== 'undefined') window._form_callback(id);
-    };
-
-    window._show_error = function(id, message, html) {
-        var form = document.getElementById('_form_' + id + '_'),
-            err = document.createElement('div'),
-            button = form.querySelector('button[type="submit"]'),
-            old_error = form.querySelector('._form_error');
-        if (old_error) old_error.parentNode.removeChild(old_error);
-        err.innerHTML = message;
-        err.className = '_error-inner _form_error _no_arrow';
-        var wrapper = document.createElement('div');
-        wrapper.className = '_form-inner _show_be_error';
-        wrapper.appendChild(err);
-        button.parentNode.insertBefore(wrapper, button);
-        button.disabled = false;
-        button.classList.remove('processing');
-    };
-
-    function validate_form() {
-        var email = document.getElementById('email').value;
-        var phone = document.getElementById('phone').value;
-        var consent = document.getElementById('sms_consent').checked;
-        
-        if (!email || !email.includes('@')) {
-            _show_error(5, "Por favor, insira um email válido");
-            return false;
-        }
-        
-        if (!phone) {
-            _show_error(5, "Por favor, insira seu WhatsApp");
-            return false;
-        }
-        
-        if (!consent) {
-            _show_error(5, "Por favor, aceite receber conteúdos exclusivos");
-            return false;
-        }
-        
-        return true;
-    }
-
-    document.getElementById('_form_5_').addEventListener('submit', function(e) {
-        e.preventDefault();
-        if (validate_form()) {
-            var button = document.getElementById('_form_5_submit');
-            button.disabled = true;
-            button.innerHTML = 'ENVIANDO...';
-            
-            // Simulate form submission
-            setTimeout(function() {
-                _show_thank_you(5);
-            }, 2000);
-        }
-    });
-    </script>
 </body>
 </html>
